@@ -9,7 +9,7 @@ multiply(5);
 // Zadanie 3
 // const average = () => averageSum = 
 function mean(array) {
-    const sum = array.reduce((a, b, c, d) => a + b, 0);
+    const sum = array.reduce((a, b, c, d) => a + b + c + d, 0);
     return sum / array.length;
   }
 average(1) 

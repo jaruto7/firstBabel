@@ -16,7 +16,7 @@ multiply(5);
 // const average = () => averageSum = 
 function mean(array) {
     var sum = array.reduce(function (a, b, c, d) {
-        return a + b;
+        return a + b + c + d;
     }, 0);
     return sum / array.length;
 }
