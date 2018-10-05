@@ -1,33 +1,40 @@
 'use strict';
 
-function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
-
 //Zadanie 1
 var hello = 'Hello';
 var world = 'World';
 console.log(hello + ' ' + world);
 //Zadanie 2
-var b = 1;
-var multiply = function multiply(a, b) {
-    return sum = a * b;
+var multiply = function multiply(a) {
+  var b = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
+  return sum = a * b;
 };
-multiply(5);
+console.log(multiply(5));
 // Zadanie 3
-// const average = () => averageSum = 
-function mean(array) {
-    var sum = array.reduce(function (a, b, c, d) {
-        return a + b + c + d;
-    }, 0);
-    return sum / array.length;
-}
-average(1);
-average(1, 3);
-average(1, 3, 6, 6);
-//Zdanie 4
-var grades = [].concat(_toConsumableArray(1), _toConsumableArray(5), _toConsumableArray(5), _toConsumableArray(5), _toConsumableArray(4), _toConsumableArray(3), _toConsumableArray(3), _toConsumableArray(2), _toConsumableArray(1));
-var average = function average(sum) {
-    return sum;
+var average = function average() {
+  for (var _len = arguments.length, sum = Array(_len), _key = 0; _key < _len; _key++) {
+    sum[_key] = arguments[_key];
+  }
+
+  return Math.floor(sum.reduce(function (previous, current) {
+    return previous + current / sum.length;
+  }));
 };
+console.log(average(1)); // 1
+console.log(average(1, 3)); // 2
+console.log(average(1, 3, 6, 6)); // 4
+//Zdanie 4
+average = function average() {
+  for (var _len2 = arguments.length, sum = Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
+    sum[_key2] = arguments[_key2];
+  }
+
+  return sum.reduce(function (previous, current) {
+    return previous + current;
+  });
+};
+var grades = [1, 5, 5, 5, 4, 3, 3, 2, 1];
+console.log(average.apply(undefined, grades));
 // // Zadanie 5
 var oddArray = [1, 4, 'Iwona', false, 'Nowak'];
 var firstname = oddArray[2],

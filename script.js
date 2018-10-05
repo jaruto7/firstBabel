@@ -3,21 +3,17 @@ const hello = 'Hello'
 const world = 'World'
 console.log(`${hello} ${world}`)
 //Zadanie 2
-const b = 1
-const multiply = ( a, b) => sum = a * b
-multiply(5);
+const multiply = ( a, b = 1 ) => sum = a * b
+console.log(multiply(5));
 // Zadanie 3
-// const average = () => averageSum = 
-function mean(array) {
-    const sum = array.reduce((a, b, c, d) => a + b + c + d, 0);
-    return sum / array.length;
-  }
-average(1) 
-average(1, 3) 
-average(1, 3, 6, 6)
+let average = (...sum) => Math.floor(sum.reduce((previous, current) => previous + current / sum.length))
+console.log(average(1)) // 1
+console.log(average(1, 3)) // 2
+console.log(average(1, 3, 6, 6)) // 4
 //Zdanie 4
-const grades = [...1, ...5, ...5, ...5, ...4, ...3, ...3, ...2, ...1]
-const average = (sum) => sum
+average = (...sum) => sum.reduce((previous, current) => previous + current)
+const grades = [ 1, 5, 5, 5, 4, 3, 3, 2, 1 ]
+console.log(average(...grades))
 // // Zadanie 5
 const oddArray = [1, 4, 'Iwona', false, 'Nowak']
 const [, , firstname, , lastname] = oddArray
