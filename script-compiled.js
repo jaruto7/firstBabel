@@ -29,9 +29,9 @@ average = function average() {
     sum[_key2] = arguments[_key2];
   }
 
-  return sum.reduce(function (previous, current) {
-    return previous + current;
-  });
+  return Math.floor(sum.reduce(function (previous, current) {
+    return previous + current / sum.length;
+  }));
 };
 var grades = [1, 5, 5, 5, 4, 3, 3, 2, 1];
 console.log(average.apply(undefined, grades));
